@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ botData }}</h1>
+    <button @click="getBotData">Fetch</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -35,6 +36,23 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      botData: {}
+    }
+  },
+  methods: {
+    getBotData() {
+
+
+
+
+      console.log("test")
+      fetch('http://localhost:3000/commands')
+          .then((response) => response.json())
+          .then((data) => this.botData = data);
+    }
   }
 }
 </script>
