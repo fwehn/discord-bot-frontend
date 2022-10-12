@@ -59,9 +59,7 @@ export default {
     },
     activateCommand(commandName, activate){
       console.log(commandName)
-
-      apiPostCall(`commands/activate/${commandName}`, {
-        guildId: this.server["id"],
+      apiPostCall(`server/${this.server["id"]}/commands/activate/${commandName}`, {
         activate: activate
       }).then(() => this.loadCommands()).catch(console.error);
     }
