@@ -1,33 +1,36 @@
 <template>
-  <div id="app">
-    <!--<img alt="Vue logo" src="./assets/logo.png">-->
-    <button @click="copyLinkToClipboard">Copy Invite-Link!</button>
-    <ServerOverview v-if="!selectedServer" @clicked="changeToServerDetailsComponent"/>
-    <ServerDetails v-else :serverData="selectedServer" @clicked="changeToServerDetailsComponent"/>
+  <div class="flex pl-16">
+    <SideBar @clicked="changeContent"/>
+    <BotDetails v-if="pageIndex === 0"/>
+    <ServerDetails v-else-if="pageIndex === 1" :key="pageData['id']" :serverData="pageData"/>
   </div>
 </template>
 
 <script>
-import ServerOverview from "@/components/ServerOverview";
+import SideBar from "@/components/SideBar";
 import ServerDetails from "@/components/ServerDetails";
+import BotDetails from "@/components/BotDetails";
 
 export default {
   name: 'App',
   data(){
     return {
-      selectedServer: null
+      pageIndex: 0,
+      pageData: null
     }
   },
   components: {
+    BotDetails,
     ServerDetails,
-    ServerOverview
+    SideBar,
   },
   created() {
     document.title = "Discord-Bot";
   },
   methods: {
-    changeToServerDetailsComponent(server) {
-      this.selectedServer = server
+    changeContent(input){
+      this.pageIndex = input["pageIndex"];
+      this.pageData = input["pageData"];
     },
     copyLinkToClipboard(){
       let text = "https://discord.com/api/oauth2/authorize?client_id=900462208822165634&permissions=8&scope=bot%20applications.commands";
@@ -42,14 +45,4 @@ export default {
 }
 </script>
 
-<style>
-body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #f1fdfe;
-  background: #2f3137;
-  margin-top: 60px;
-}
-</style>
+<style src="./index.css"></style>

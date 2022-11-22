@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .list-category{
+        @apply cursor-default;
+    }
+
+    .list-item{
+        @apply hover:bg-discord-700 hover:text-discord-400 cursor-pointer w-52;
+    }
+
+    .list-divider{
+        @apply w-52 h-0.5 bg-discord-700 my-0.5 rounded-2xl;
+    }
+}
