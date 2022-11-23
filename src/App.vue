@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import SideBar from "@/components/SideBar";
-import ServerDetails from "@/components/ServerDetails";
-import BotDetails from "@/components/BotDetails";
+import SideBar from "@/components/SideBar.vue";
+import ServerDetails from "@/components/ServerDetails.vue";
+import BotDetails from "@/components/BotDetails.vue";
 
 export default {
   name: 'App',
@@ -45,4 +45,4 @@ export default {
 }
 </script>
 
-<style src="./index.css"></style>
+<style src="./assets/main.css"></style>

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import SideBarIcon from "@/components/SideBarIcon";
-import {apiGetCall} from "@/apiFunctions";
+import SideBarIcon from "@/components/SideBarIcon.vue";
+import {apiGetCall} from "@/assets/apiFunctions.js";
 export default {
   name: "SideBar",
   components: {SideBarIcon},

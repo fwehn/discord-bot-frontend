@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {apiGetCall} from "@/apiFunctions";
+import {apiGetCall} from "@/assets/apiFunctions.js";
 
 export default {
   name: "ServerOverview",

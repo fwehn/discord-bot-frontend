@@ -48,9 +48,9 @@
 </template>
 
 <script>
-import {apiGetCall, apiPostCall, apiDeleteCall} from "@/apiFunctions";
-import CreateEvent from "@/components/CreateEvent";
-import EventDetails from "@/components/EventDetails";
+import {apiGetCall, apiPostCall, apiDeleteCall} from "@/assets/apiFunctions.js";
+import CreateEvent from "@/components/CreateEvent.vue";
+import EventDetails from "@/components/EventDetails.vue";
 
 export default {
   name: "ServerDetails",
@@ -71,7 +71,6 @@ export default {
   methods: {
     loadCommands(){
       apiGetCall(`server/${this.server["id"]}/commands`).then(data => {
-        console.log(data)
         this.activeCommands = data["active"];
         this.inactiveCommands = data["inactive"];
       }).catch(console.error);
