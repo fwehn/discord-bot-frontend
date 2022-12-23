@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "set NODE_OPTIONS=--openssl-legacy-provider && set TZ=Berlin/Amsterdam && vue-cli-service serve",
-    "build2": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
-    "lint": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint",
-
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
@@ -16,7 +12,8 @@
     "autoprefixer": "^10.4.13",
     "core-js": "^3.6.5",
     "tailwindcss": "^3.2.3",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "postcss": "^8.4.19"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.2",

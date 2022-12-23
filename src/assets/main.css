@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer components{
+    .mainButton{
+        @apply bg-discord-600 hover:bg-green-600
+                text-green-600 hover:text-discord-100
+                px-1 py-0.5 rounded-lg
+                transition-all duration-300 ease-linear
+                cursor-pointer;
+    }
+
     .list-category{
         @apply cursor-default;
     }

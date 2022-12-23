@@ -14,7 +14,8 @@
                  rounded-md shadow-md
                  text-white bg-discord-900
                  text-xs font-bold
-                 transition-all duration-100 scale-0 origin-left">
+                 transition-all duration-100 scale-0 origin-left
+                 z-50">
       {{name}}: {{memberCount || 0}}
     </span>
   </div>

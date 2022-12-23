@@ -1,7 +1,7 @@
 <template>
   <div class="text-discord-500 flex ">
 
-    <div class="fixed top-0 left-16 bg-discord-800 h-screen w-60 m-0 flex flex-col items-center">
+    <div class="fixed top-0 left-16 bg-discord-800 h-screen w-60 m-0 flex flex-col items-center -z-10">
 
       <h1 class="text-3xl font-bold cursor-pointer" @click="mainSectionContent = 0;">{{server["serverData"]["name"]}}</h1>
 
@@ -15,7 +15,7 @@
       </ul>
 
 
-
+<!--todo change @click to open command details-->
       <h3 class="list-category">╠═ Active ════════════╣</h3>
       <ul>
         <li v-bind:key="command" v-for="command in activeCommands" class="list-item" @click="activateCommand(command, false)">
