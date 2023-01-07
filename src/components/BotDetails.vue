@@ -2,12 +2,12 @@
  <div class="bg-discord-700 w-full h-screen">
    <h1 class="text-discord-500">{{botInformation["username"]}}</h1>
    <div class="flex gap-2">
-     <label class="text-discord-500">
-       Satz:
-       <input id="ISentence" type="text" v-model="newSentence" placeholder="Bitte gib einen Satz ein..." class="ml-2">
-     </label>
+    <form class="flex flex-col gap-2 items-center">
+      <label class="text-discord-500" for="ISentence">Satz:</label>
+      <input id="ISentence" type="text" v-model="newSentence" placeholder="Bitte gib einen Satz ein..." class="ml-2">
+      <button class="mainButton w-56" @click="createSentence">Hinzufügen</button>
+    </form>
 
-     <button class="mainButton" @click="createSentence">Hinzufügen</button>
    </div>
  </div>
 </template>
@@ -32,7 +32,8 @@ export default {
           .then(data => this.botInformation = data)
           .catch(console.error);
     },
-    createSentence(){
+    createSentence(event){
+      event.preventDefault();
       apiPostCall("sentence", {sentence: this.newSentence})
           .then(res => {
             alert(res["message"]);

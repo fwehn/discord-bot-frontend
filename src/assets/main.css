@@ -5,9 +5,10 @@
 @layer components{
     .mainButton{
         @apply bg-discord-600 hover:bg-green-600
+                text-xl
                 text-green-600 hover:text-discord-100
                 px-1 py-0.5 rounded-lg
-                transition-all duration-300 ease-linear
+                transition-all duration-200 ease-linear
                 cursor-pointer;
     }
 
@@ -21,5 +22,17 @@
 
     .list-divider{
         @apply w-52 h-0.5 bg-discord-700 my-0.5 rounded-2xl;
+    }
+
+    label{
+        @apply text-xl mt-2 w-full
+    }
+
+    input[type=text]{
+        @apply rounded-md bg-discord-600 border-discord-600 text-discord-100 border-2 focus:outline-0 px-2 h-10 text-xl m-0
+    }
+
+    input[type=datetime-local]{
+        @apply rounded-md bg-discord-600 border-discord-600 text-discord-100 border-2 focus:outline-0 px-2 h-10 text-xl m-0
     }
 }
